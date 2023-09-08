@@ -21,6 +21,16 @@ export const ParkingSpotCard = ({ ParkingSpot }) => {
   ).toLocaleDateString();
   const formattedDateEnd = new Date(ParkingSpot.dateEnd).toLocaleDateString();
 
+  const imageContext = require.context(
+    "../../public/images/user_uploaded",
+    false,
+    /\.(jpg|jpeg)$/
+  );
+  const imagePaths = imageContext.keys().map(imageContext);
+
+  const randomIndex = Math.floor(Math.random() * imagePaths.length);
+  const randomImagePath = imagePaths[randomIndex];
+
   return (
     <Link to={spotDetailsPath}>
       <motion.div
@@ -32,6 +42,15 @@ export const ParkingSpotCard = ({ ParkingSpot }) => {
           className="text-center h-100 mb-4 g-3 p-3 x-4 y-4 text-white"
           style={{ maxWidth: "22rem", backgroundColor: "#1565C0" }}
         >
+          <img
+            id="random-image"
+            src={randomImagePath}
+            alt="Random"
+            height="200px"
+            width="100%"
+            object-fit="cover"
+            object-position="center"
+          />
           <MDBCardBody>
             <MDBCardTitle>{ParkingSpot.name}</MDBCardTitle>
             <MDBCardText>{`${ParkingSpot.streetAddress}, ${ParkingSpot.zipcode}`}</MDBCardText>
@@ -44,6 +63,3 @@ export const ParkingSpotCard = ({ ParkingSpot }) => {
     </Link>
   );
 };
-
-
-
