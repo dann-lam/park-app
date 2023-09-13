@@ -6,6 +6,7 @@ import {
   MDBCardBody,
   MDBCardTitle,
   MDBCardText,
+  MDBCardImage,
 } from "mdb-react-ui-kit";
 
 export const ParkingSpotCard = ({ ParkingSpot }) => {
@@ -32,34 +33,50 @@ export const ParkingSpotCard = ({ ParkingSpot }) => {
   const randomImagePath = imagePaths[randomIndex];
 
   return (
-    <Link to={spotDetailsPath}>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.2 }}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.2 }}
+    >
+      <MDBCard
+        className="text-center mb-4 g-3 text-white h-100"
+        style={{ maxWidth: "30rem" }}
       >
-        <MDBCard
-          className="text-center h-100 mb-4 g-3 p-3 x-4 y-4 text-white"
-          style={{ maxWidth: "22rem", backgroundColor: "#1565C0" }}
-        >
-          <img
-            id="random-image"
+        {/* style={{ maxWidth: "30rem", backgroundColor: "#1565C0" }} */}
+        <Link to={spotDetailsPath}>
+          <MDBCardImage
+            className="rounded-top-8"
+            position="top"
             src={randomImagePath}
             alt="Random"
-            height="200px"
-            width="100%"
+            height="350px"
+            width="350px"
+            object-fit="cover"
+          ></MDBCardImage>
+
+          {/* <img
+            id="random-image"
+            height="350px"
+            width="350px"
             object-fit="cover"
             object-position="center"
-          />
+          /> */}
+
           <MDBCardBody>
-            <MDBCardTitle>{ParkingSpot.name}</MDBCardTitle>
-            <MDBCardText>{`${ParkingSpot.streetAddress}, ${ParkingSpot.zipcode}`}</MDBCardText>
-            <MDBCardText>{`${formattedDateStart} - ${formattedDateEnd}`}</MDBCardText>
-            <MDBCardText>{ParkingSpot.description}</MDBCardText>
-            <MDBCardText>${ParkingSpot.price} Per Day</MDBCardText>
+            <MDBCardTitle className="text-start fw-bold text-dark">
+              {ParkingSpot.name}
+            </MDBCardTitle>
+            <MDBCardText className="text-start text-muted">{`${ParkingSpot.streetAddress}, ${ParkingSpot.zipcode}`}</MDBCardText>
+            <MDBCardText className="text-start text-muted">{`${formattedDateStart} - ${formattedDateEnd}`}</MDBCardText>
+            <MDBCardText className="text-start text-muted">
+              {ParkingSpot.description}
+            </MDBCardText>
+            <MDBCardText className="text-start fw-bold text-dark">
+              ${ParkingSpot.price} / day
+            </MDBCardText>
           </MDBCardBody>
-        </MDBCard>
-      </motion.div>
-    </Link>
+        </Link>
+      </MDBCard>
+    </motion.div>
   );
 };

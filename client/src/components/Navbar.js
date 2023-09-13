@@ -31,8 +31,9 @@ const Navbar = () => {
       <MDBNavbar
         expand="lg"
         light
-        style={{ backgroundColor: "#0D47A1", height: "70px" }}
-        className="p-3 mb-2 text-white shadow"
+        style={{ height: "80px" }}
+        // style={{ backgroundColor: "#0D47A1", height: "70px" }}
+        className="p-5 mb-2 text-white shadow"
       >
         {/* Replace this with a walter white */}
         <MDBNavbarBrand href="/">

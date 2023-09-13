@@ -1,5 +1,6 @@
 import React from "react";
 import ParkingSpotList from "../components/ParkingSpotList";
+import { MDBContainer } from "mdb-react-ui-kit";
 // import HelloWorld from "../components/helloworld";
 // import { Link } from "react-router-dom";
 // import ParkingSpotCard from "../components/ParkingSpotCard";
@@ -8,12 +9,11 @@ import ParkingSpotList from "../components/ParkingSpotList";
 
 const Home = () => {
   return (
-    <div>
-      <div className="container">
-        {/* <HelloWorld />blah blah */}
+    <>
+      <MDBContainer breakpoint="fluid">
         <ParkingSpotList />
-      </div>
-    </div>
+      </MDBContainer>
+    </>
   );
 };
 
