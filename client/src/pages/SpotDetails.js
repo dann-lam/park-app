@@ -93,14 +93,11 @@ const SpotDetails = () => {
     }
   };
 
-  //LORD HELP ME FOR I HAVE SINNED
   const formattedDateStart = new Date(spot.dateStart).toLocaleDateString();
   const formattedDateEnd = new Date(spot.dateEnd).toLocaleDateString();
   let enddatemaxdate = new Date(spot.dateEnd);
   let startdatemaxdate = new Date(endDate);
   let enddatemindate = new Date(startDate);
-  //LORD HELP ME FOR I HAVE SINNED
-  //This works. I don't know exactly why. I am in a state of trance.
 
   //GOD THIS IS SO HACKY
   //FORGIVE ME PLEASE (You'll have to feather the form to get this to work LOL)

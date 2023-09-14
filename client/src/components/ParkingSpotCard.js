@@ -39,9 +39,20 @@ export const ParkingSpotCard = ({ ParkingSpot }) => {
       transition={{ duration: 0.2 }}
     >
       <MDBCard
-        className="text-center text-white h-100"
-        style={{ height: "350px", width: "350px" }}
+        className="text-center text-white h-100 m-2"
+        style={{
+          maxHeight: "550px",
+          maxWidth: "475px",
+          minHeight: "475px",
+          minWidth: "400px",
+        }}
       >
+        {/* {
+          maxHeight: "350px",
+          maxWidth: "350px",
+          minHeight: "75%",
+          minWidth: "75%",
+        } */}
         {/* style={{ maxWidth: "30rem", backgroundColor: "#1565C0" }} */}
         <Link to={spotDetailsPath}>
           <MDBCardImage
