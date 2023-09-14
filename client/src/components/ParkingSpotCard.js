@@ -39,8 +39,8 @@ export const ParkingSpotCard = ({ ParkingSpot }) => {
       transition={{ duration: 0.2 }}
     >
       <MDBCard
-        className="text-center mb-4 g-3 text-white h-100"
-        style={{ maxWidth: "30rem" }}
+        className="text-center text-white h-100"
+        style={{ height: "350px", width: "350px" }}
       >
         {/* style={{ maxWidth: "30rem", backgroundColor: "#1565C0" }} */}
         <Link to={spotDetailsPath}>
@@ -68,9 +68,9 @@ export const ParkingSpotCard = ({ ParkingSpot }) => {
             </MDBCardTitle>
             <MDBCardText className="text-start text-muted">{`${ParkingSpot.streetAddress}, ${ParkingSpot.zipcode}`}</MDBCardText>
             <MDBCardText className="text-start text-muted">{`${formattedDateStart} - ${formattedDateEnd}`}</MDBCardText>
-            <MDBCardText className="text-start text-muted">
+            {/* <MDBCardText className="text-start text-muted">
               {ParkingSpot.description}
-            </MDBCardText>
+            </MDBCardText> */}
             <MDBCardText className="text-start fw-bold text-dark">
               ${ParkingSpot.price} / day
             </MDBCardText>

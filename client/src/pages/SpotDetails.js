@@ -162,12 +162,7 @@ const SpotDetails = () => {
     <MDBContainer>
       <MDBRow>
         <MDBCol md="8">
-          <MDBCard
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(69,69,69,1) 0%, rgba(89,89,91,1) 50%, rgba(69,69,69,1) 100%)",
-            }}
-          >
+          <MDBCard>
             <MDBCardBody>
               <MDBCardTitle>{spot.name}</MDBCardTitle>
               <MDBCardText>
@@ -184,12 +179,7 @@ const SpotDetails = () => {
           </MDBCard>
         </MDBCol>
         <MDBCol md="4">
-          <MDBCard
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(69,69,69,1) 0%, rgba(89,89,91,1) 50%, rgba(69,69,69,1) 100%)",
-            }}
-          >
+          <MDBCard>
             <MDBCardBody>
               <MDBCardText>
                 <p>Price: ${spot.price} a day</p>
